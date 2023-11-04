@@ -1,6 +1,41 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
+
+.height{
+  min-height: 100vh;
+}
+
+.fileInput{
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.blurImg{
+  position: relative;
+}
+
+.blurImg:hover .overlay {
+  opacity: 1;
+}
+
+
 
 .App-logo {
   height: 40vmin;
