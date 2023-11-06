@@ -73,9 +73,12 @@ const GalleryLayout = () => {
     }
   ]);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Clearing add image input file to avoid issues with consecutive uploads
   const onInputClick = (event) => {
     event.target.value = '';
-  };
+  }; 
 
   const onFilesAdded = (e) => {
     let fileList = [...fileArr];
@@ -95,11 +98,17 @@ const GalleryLayout = () => {
   const handleDelete = () => {
     const newArr = fileArr.filter((obj) => obj.checked !== true);
     setFileArr(newArr);
+    setIsOpen(false);
   };
 
   return (
     <div className="bg-gray-100 p-8 height">
-      <GalNav handleDelete={handleDelete} filteredObjects={filteredObjects} />
+      <GalNav
+        handleDelete={handleDelete}
+        filteredObjects={filteredObjects}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <Grid
         fileArr={fileArr}
         setFileArr={setFileArr}

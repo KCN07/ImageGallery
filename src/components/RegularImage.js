@@ -11,7 +11,7 @@ const RegularImage = ({ image, index, handleOnChange }) => {
     transition,
     transform: CSS.Transform.toString(transform),
     minHeight: '64px',
-    minWidth: "64px"
+    minWidth: '64px'
   };
 
   return (
@@ -20,11 +20,18 @@ const RegularImage = ({ image, index, handleOnChange }) => {
       {...attributes}
       {...listeners}
       key={index}
-      className="md:col-span-1 lg:col-span-1 border-2 blurImg"
+      className="md:col-span-1 lg:col-span-1 border-2 blurImg rounded-lg"
       style={style}
     >
-      <img src={image.fileUrl} alt={`Image ${index + 2}`} className="w-full h-full object-cover" />
-      <div className="overlay flex items-start" style={{ opacity: image.checked ? '1' : '' }}>
+      <img
+        src={image.fileUrl}
+        alt={`Image ${index + 2}`}
+        className="w-full h-full object-cover rounded-md"
+      />
+      <div
+        className="overlay flex items-start rounded-md"
+        style={{ opacity: image.checked ? '1' : '' }}
+      >
         <input
           type="checkbox"
           id={image.id}

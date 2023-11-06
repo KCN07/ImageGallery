@@ -17,11 +17,14 @@ const FeaturedImage = ({ image, index, handleOnChange }) => {
       ref={setNodeRef}
       {...attributes}
       {...listeners}
-      className="col-span-2 row-span-2 border-2 blurImg"
+      className="col-span-2 row-span-2 border-2 blurImg rounded-lg"
       style={style}
     >
-      <img src={image.fileUrl} alt="Featured" className="w-full h-full object-cover" />
-      <div className="overlay flex items-start" style={{ opacity: image.checked ? '1' : '' }}>
+      <img src={image.fileUrl} alt="Featured" className="w-full h-full object-cover rounded-md" />
+      <div
+        className="overlay flex items-start rounded-md"
+        style={{ opacity: image.checked ? '1' : '' }}
+      >
         <input
           type="checkbox"
           id={image.id}
